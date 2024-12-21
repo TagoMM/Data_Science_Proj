@@ -1,0 +1,5 @@
+Model Evaluation Metrics
+========================
+Mean Absolute Error: 341834.05
+Mean Squared Error: 2383578833624.06
+Root Mean Squared Error: 1543884.33

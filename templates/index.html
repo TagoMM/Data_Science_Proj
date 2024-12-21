@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate Data Analysis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        label {
+            display: block;
+            margin: 15px 0 5px;
+            font-weight: bold;
+        }
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 5px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .close-button {
+            background-color: #f44336;
+        }
+        .close-button:hover {
+            background-color: #e53935;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Real Estate Data Analysis</h1>
+        <form action="{{ url_for('run_analysis') }}" method="post">
+            <label for="analysis">Choose an analysis to run:</label>
+            <select name="analysis" id="analysis">
+                <option value="Exploratory Data Analysis">Exploratory Data Analysis</option>
+                <option value="Correlation Scatter Plots">Correlation Scatter Plots</option>
+                <option value="Location Impact">Location Impact</option>
+                <option value="Housing Status Comparison">Housing Status Comparison</option>
+                <option value="Historical Trends">Historical Trends</option>
+                <option value="Brokers and Streets">Brokers and Streets</option>
+                <option value="Predictive Modeling">Predictive Modeling</option>
+            </select>
+            <button type="submit">Run Analysis</button>
+        </form>
+        <form action="{{ url_for('shutdown') }}" method="post">
+            <button type="submit" class="close-button">Close Application</button>
+        </form>
+    </div>
+</body>
+</html>
